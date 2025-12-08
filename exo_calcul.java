@@ -24,7 +24,7 @@ public class exo_calcul {
         
         System.out.println("Le résultat :"+calcul(1,2,3));
 
-        // sc.close();
+        sc.close();
 
     }
 

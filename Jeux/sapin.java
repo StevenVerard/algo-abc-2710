@@ -1,3 +1,4 @@
+package Jeux;
 
 import java.util.Random;
 public class sapin {
