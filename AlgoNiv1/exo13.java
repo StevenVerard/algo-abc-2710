@@ -1,3 +1,4 @@
+package AlgoNiv1;
 import java.util.Scanner;
 public class exo13 {
     public static void main(String[] args) {

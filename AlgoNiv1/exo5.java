@@ -1,9 +1,10 @@
+package AlgoNiv1;
 import java.util.Scanner;
 
-public class exo3 {
+public class exo5 {
     public static void main(String[] args) {
-        int a, b, result;
-        float reste;
+        float a, b, c, result;
+        
 
         System.out.println("Veuillez saisir le nb a");
         Scanner scanner = new Scanner(System.in);   
@@ -11,16 +12,19 @@ public class exo3 {
 
         System.out.println("Veuillez saisir le nb b");
         b = scanner.nextInt();
-        result = a+b;
-        System.out.println("résultat :" + result);
 
-        reste = result%2;
+        System.out.println("Veuillez saisir le nb c");
+        c= scanner.nextInt();
 
-        if(reste == 0){
-            System.out.println("résultat est pair");
-        }else{
-            System.out.println("résultat est impair");
+
+        result = (a*b)/c;
+        System.out.println("équation :" + result);
+
+        
+        if(result> 10){
+            System.out.println("résultat est supérieur");
         }
         scanner.close();
     }
+
 }

@@ -1,3 +1,4 @@
+package AlgoNiv1;
 public class exo1 {
     public static int addNumbers (int a, int b){
             return a+b;

@@ -1,9 +1,10 @@
+package AlgoNiv1;
 import java.util.Scanner;
 
-public class exo9 {
+public class exo8 {
     public static void main(String[] args) {
             
-        String firstname, name, mail, mailCo, password, password2, passwordCo;
+        String firstname, name, mail, password, password2;
         
         Scanner scanner = new Scanner(System.in);  
 
@@ -24,22 +25,9 @@ public class exo9 {
         
 
         if(password2.equalsIgnoreCase(password) ){
-            System.out.println("Merci, "+ firstname +" "+ name+ "votre inscription a bien été effectuée, vous recevrez un mail de confirmation à l'adresse : ekonda@arfp.asso.fr");
+            System.out.println("Merci, "+ firstname +" "+ name+  " votre mail est :  "+ mail+"votre inscription a bien été effectuée, vous recevrez un mail de confirmation à l'adresse : ekonda@arfp.asso.fr");
         }else{
             System.out.println("Inscription annulée !");
-        }
-
-
-        System.out.println("Veuillez saisir votre adresse mail");
-        mailCo = scanner.nextLine();
-
-        System.out.println("Veuillez saisir votre password");
-        passwordCo = scanner.nextLine();
-
-        if(mailCo.equalsIgnoreCase(mail) && passwordCo.equalsIgnoreCase(password)){
-            System.out.println("Bienvenue "+ firstname +" "+ name+ " ! ");
-        }else{
-            System.out.println("Connexion refusée !");
         }
         
         
