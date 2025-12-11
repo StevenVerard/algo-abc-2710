@@ -27,6 +27,6 @@ public class exo18 {
             System.out.println("Vous ne pouvez pas hélas obtenir de prêt !");
         }
 
-
+        scanner.close();
     }
 }

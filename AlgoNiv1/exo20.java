@@ -34,6 +34,6 @@ public class exo20 {
         }else{
             System.out.println("Vincent Escreau est la nouvelle maire de Mulhouse");
         }
-
+        scanner.close();
     }
 }
