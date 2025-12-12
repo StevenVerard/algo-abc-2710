@@ -35,7 +35,7 @@ public class exo3 {
                         }
                         break;
                     case 2:
-                        System.out.println("Vous avez actuellement 1500€ sur votre solde"+compteBanque);
+                        System.out.println("Vous avez actuellement sur votre solde"+compteBanque);
                         break;
                     case 3:
                         System.out.println("Combien voulez-vous déposer ?:");
