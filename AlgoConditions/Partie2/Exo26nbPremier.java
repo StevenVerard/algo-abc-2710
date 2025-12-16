@@ -4,15 +4,24 @@ import java.util.Scanner;
 
 public class Exo26nbPremier {
     public static void main(String[] args) {
-               double n=0;
-
+        int i=1, premier=0;
+        double nb, test;
         Scanner sc = new Scanner(System.in);
-
         System.out.println("nb : ");
-        n= sc.nextInt();
+        nb = sc.nextInt();
 
-        if(n/1==n || n/n==1){
-            System.out.println("c'est un nombre premier");
+        while(i<=nb){           
+            if(nb%i==0){
+                premier++;
+            }            
+            i++;
         } 
+        if(premier==2){
+                System.out.println("Nb premier car ");
+        }else{
+                System.out.println("pas");
+        };
+
+        sc.close();
     }
 }
