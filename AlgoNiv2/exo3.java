@@ -3,8 +3,8 @@ package AlgoNiv2;
 import java.util.Scanner;
 
 public class exo3 {
-    public static void main(String[] args) {
-            int terminer=0,retirer =1, afficher_cpt = 2, deposer=3, choix=1;
+    public static void main(String[] args) { //permet d'intéragir avec la console
+            int choix=1;
             float compteBanque = 2000, retrait=0;
             Scanner scanner = new Scanner(System.in);
 
@@ -25,7 +25,7 @@ public class exo3 {
                         scanner.nextLine();
                         break;
                     case 1:
-                        System.out.println("Combien voulez-vous retirer ?:");
+                        System.out.println("Combien voulez-vous retirer ?");
                         retrait=scanner.nextInt();
                         if(compteBanque>retrait){
                             compteBanque -= retrait;
@@ -35,18 +35,23 @@ public class exo3 {
                         }
                         break;
                     case 2:
-                        System.out.println("Vous avez actuellement sur votre solde"+compteBanque);
+                        System.out.println("Vous avez actuellement sur votre solde : "+compteBanque);
                         break;
                     case 3:
-                        System.out.println("Combien voulez-vous déposer ?:");
+                        System.out.println("Combien voulez-vous déposer ?");
                         scanner.nextLine();
-                        
-
                         break;
                     default:
                         break;
-                }
+            }
         }
-    }
-    
+    scanner.close();
+    }   
 }
+
+/*une methode static est instantié d'office
+ alors que les méthodes publiques doivent être instantiés, cad creer un objet avec new objet
+ Scanner scanner = new Scanner(System.in);
+ pas possible de convertir un double(64byte) en int (8byte)
+ mais int en entier oui
+ */
