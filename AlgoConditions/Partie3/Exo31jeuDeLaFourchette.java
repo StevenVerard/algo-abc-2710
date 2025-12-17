@@ -9,7 +9,7 @@ public class Exo31jeuDeLaFourchette {
         Random random = new Random();
 
         nbO = random.nextInt(0,101);
-        System.out.println(nbO);
+        // System.out.println(nbO);
 
         while(nbO!=nbJ){
             System.out.println("Saisissez un nombre : ");
