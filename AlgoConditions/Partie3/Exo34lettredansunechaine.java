@@ -26,7 +26,5 @@ public class Exo34lettredansunechaine {
         }else{
             System.out.println("il n'y a pas cette lettre ds la phrase");          
         }
-        
-
     }
 }
