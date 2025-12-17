@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Exo26nbPremier {
     public static void main(String[] args) {
         int i=1, premier=0;
-        double nb, test;
+        double nb;
         Scanner sc = new Scanner(System.in);
         System.out.println("nb : ");
         nb = sc.nextInt();
