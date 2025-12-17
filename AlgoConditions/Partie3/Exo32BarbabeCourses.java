@@ -9,14 +9,11 @@ public class Exo32BarbabeCourses {
 
         System.out.println("Saisir somme");
         s = sc.nextInt();
-
-        while(s>0){
-            
+        while(s>0){     
                 s = ((s/2)-1);
-                nbMag++;
-            
+                nbMag++;  
         }
-        
         System.out.println("le nb de magasins : "+nbMag);
+        sc.close();
     }
 }

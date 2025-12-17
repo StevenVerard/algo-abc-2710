@@ -24,6 +24,7 @@ public class Exo33RechercherNbDsTab {
         if(!b){
             System.out.println("404 Not found ");
         }
+        sc.close();
 
     }
 }
