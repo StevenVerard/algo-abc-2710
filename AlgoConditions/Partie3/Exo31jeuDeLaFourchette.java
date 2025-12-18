@@ -4,27 +4,29 @@ import java.util.Scanner;
 
 public class Exo31jeuDeLaFourchette {
     public static void main(String[] args) {
-        int nb, nbJ=0, essai=0, min=0, max=100;
+        int nbO, nbJ=0, essai=1, min=0, max=100;
         Scanner sc = new Scanner(System.in);
         Random random = new Random();
 
-        nb = random.nextInt(0,101);
-        System.out.println(nb);
+        nbO = random.nextInt(0,101);
+        // System.out.println(nbO);
 
-        while(nb!=nbJ){
+        while(nbO!=nbJ){
             System.out.println("Saisissez un nombre : ");
             nbJ= sc.nextInt();
-            if(nb==nbJ){
+            if(nbO==nbJ){
                 System.out.println("Bravo vous avez trouvé en "+essai+" essai/s");
                 break;
-            }else if(nb>nbJ){
+            }else if(nbO<nbJ && (nbJ>min && nbJ<max)){
                 System.out.println("Le chiffre est compris entre : " +min+" et : "+nbJ);
+                max=nbJ;
                 
-            }else if(nb<nbJ){
-                System.out.println("Le chiffre est compris entre : " +max+" et : "+nbJ);
+            }else if(nbO>nbJ && (nbJ>min && nbJ<max)){
+                System.out.println("Le chiffre est compris entre : " +nbJ+" et : "+max);
+                min=nbJ;
+                System.out.println("le nouveau min : "+min);
             }else{
-                System.out.println("Erreur ! Saisissez un nombre : ");
-                nbJ= sc.nextInt();
+                System.out.println("Erreur ! Saisissez un nombre entre  "+min +" et "+max);
             }
             essai++;
         }
