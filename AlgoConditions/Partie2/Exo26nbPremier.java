@@ -4,22 +4,26 @@ import java.util.Scanner;
 
 public class Exo26nbPremier {
     public static void main(String[] args) {
-        int i=1, premier=0;
-        double nb;
+        int i=2;
+        
+        Boolean premier;
+        int nb;
         Scanner sc = new Scanner(System.in);
         System.out.println("nb : ");
         nb = sc.nextInt();
 
-        while(i<=nb){           
+        premier=true;
+        while(i<=nb/2){
+
             if(nb%i==0){
-                premier++;
+                premier=false;
             }            
             i++;
         } 
-        if(premier==2){
-                System.out.println("Nb premier car ");
+        if(premier){
+                System.out.println("Nb premier car  pas de diviseurs");
         }else{
-                System.out.println("pas");
+                System.out.println("pas premier il existe un diviseur");
         };
 
         sc.close();

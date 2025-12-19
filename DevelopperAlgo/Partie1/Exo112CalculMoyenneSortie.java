@@ -1,4 +1,4 @@
-package DevelopperAlgo;
+package DevelopperAlgo.Partie1;
 
 import java.util.Scanner;
 
