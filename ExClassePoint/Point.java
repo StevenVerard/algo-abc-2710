@@ -49,5 +49,11 @@ public class Point {
         return new Point(-this.x, -this.y);
     }
 
+    public Point distancePoint(Point unPoint) {
+        double distX = this.x - unPoint.getX();
+        double distY = this.y - unPoint.getY();
+        return new Point(distX, distY);
+    }
+
 
 }
