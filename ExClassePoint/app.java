@@ -1,5 +1,7 @@
 package ExClassePoint;
 
+import java.util.Random;
+
 public class app {
     public static void main(String[] args) {
         Point p1 = new Point(2,3);
@@ -22,7 +24,6 @@ public class app {
     
         Point p7 = p1.distancePoint(p2);
         System.out.println("Point p7 (symétrie par rapport à l'origine de p1) : (" + p7.getX() + "," + p7.getY() + ")");
-        
 
     }
 }
