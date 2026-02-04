@@ -12,14 +12,14 @@ public class CompteEpargne extends Compte {
      * @param _solde
      * @param _decouvertAutorise
      */
-    public CompteEpargne(int _nbCompte, String _nomProprio, double _solde, double _decouvertAutorise, double _taux) {
-        super(_nbCompte, _nomProprio, _solde, _decouvertAutorise);
+    public CompteEpargne( String _nomProprio, int _nbCompte, double _solde, double _taux) {
+        super( _nomProprio, _nbCompte, _solde, 0);
         this.taux_interet = _taux;
     }
 
     // constructeur à vide
     public CompteEpargne() {
-
+        this( "Anonyme", 0,0.0, 0.0);
     }
 
     /**

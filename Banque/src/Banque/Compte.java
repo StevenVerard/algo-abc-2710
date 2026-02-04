@@ -17,32 +17,32 @@ public class Compte {
     }
 
     // propriétés accesseurs
-    public double getdecouvertAutorise() {
+    public double getDecouvertAutorise() {
         return decouvertAutorise;
     }
 
-    public String getnomPropietaire() {
+    public String getNomPropietaire() {
         return nomPropietaire;
     }
 
-    public int getnumero() {
+    public int getNumero() {
         return numero;
     }
 
-    public double getsolde() {
+    public double getSolde() {
         return solde;
     }
 
     // propriétés modifieurs
-    public void setdecouvertAutorise(double newVal) {
+    public void setDecouvertAutorise(double newVal) {
         decouvertAutorise = newVal;
     }
 
-    public void setsolde(double newVal) {
+    public void setSolde(double newVal) {
         solde = newVal;
     }
 
-    public boolean setnomProprietaire(String _nouvNom) {
+    public boolean setNomProprietaire(String _nouvNom) {
         if (this.nomPropietaire.equals("sans nom")) {
 
             this.nomPropietaire = _nouvNom;
@@ -54,9 +54,10 @@ public class Compte {
 
     // constructeur avec paramètres
 
-    public Compte(int _nbCompte, String _nomProprio, double _solde, double _decouvertAutorise) {
-        LocalDateTime locTimes = LocalDateTime.now();
-        this.numero = locTimes.hashCode();
+    public Compte(String _nomProprio, int _nbCompte, double _solde, double _decouvertAutorise) {
+        // LocalDateTime locTimes = LocalDateTime.now();
+        // this.numero = locTimes.hashCode();
+        this.numero= _nbCompte;
         this.nomPropietaire = _nomProprio;
         this.solde = _solde;
         this.decouvertAutorise = _decouvertAutorise;
