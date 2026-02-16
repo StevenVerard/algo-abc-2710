@@ -35,7 +35,8 @@ public class Voiture {
     }
 
     public int vitesseMax(){
-        Voiture.vitesseMax = Moteur.vitesseMax - (Voiture.poids * 30/100);
+        int vitesseMax = this.moteur.getVitesseMax() - (this.poids * 30/100);
+        return vitesseMax;
     }
 
     public void afficherInfos(){
