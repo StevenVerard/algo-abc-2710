@@ -1,9 +1,9 @@
 
 
 import java.lang.reflect.Array;
-import java.util.LinkedList;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * @author SVerard
@@ -12,7 +12,7 @@ import java.util.Arrays;
  */
 public class Stat {
 
-	private ArrayList<Double> salaires;
+	private ArrayList<Float> salaires;
 	private float quartiles;
 	private float moyenne;
 	private float mediane;
@@ -25,48 +25,58 @@ public class Stat {
 	 * @param mediane
 	 * @param ecartType
 	 */
-	public void stat(float quartiles, float moyenne, float mediane, float ecartType, double[] salaires){
-		this.quartiles = quartiles;
-		this.moyenne = moyenne;
-		this.mediane = mediane;
-		this.ecartType = ecartType;
-		this.salaires = new ArrayList<>(Arrays.asList(2100.0, 2150.0, 2200.0, 2250.0, 2300.0, 2350.0, 2400.0, 2450.0, 2500.0, 2550.0, 2600.0, 2650.0, 2700.0, 2750.0, 2800.0, 2900.0, 2950.0, 2950.0, 3000.0, 3000.0,
-3000.0, 3000.0, 3100.0, 3100.0, 3150.0, 3150.0, 3200.0, 3200.0, 3250.0, 3250.0, 3300.0, 3300.0, 3350.0, 3350.0, 3400.0, 3400.0, 3450.0, 3500.0, 3550.0, 3600.0, 3650.0, 3700.0,
-3750.0, 3800.0, 3850.0, 3900.0, 3900.0, 3950.0, 3950.0, 4000.0, 4100.0, 4150.0, 4200.0, 4250.0, 4300.0, 4350.0, 4400.0, 4450.0, 4500.0, 4550.0, 4600.0, 4650.0, 4700.0, 4750.0, 4800.0, 4850.0, 4900.0, 4950.0, 5000.0, 5050.0,
-5100.0, 5150.0, 5200.0, 5250.0, 5300.0, 5350.0, 5400.0, 5450.0, 5500.0, 5500.0, 5600.0, 5700.0, 5800.0, 5900.0, 6000.0, 6100.0, 6200.0, 6300.0, 6400.0, 6500.0, 6700.0, 6900.0, 7100.0, 7400.0, 7700.0, 8000.0, 8300.0, 8700.0, 9100.0, 9500.0));
+	public Stat(ArrayList<Float> _liste){
+		this.salaires = _liste;
 	}
-
 	public Stat(){
-
+		this.salaires = new ArrayList<Float>(Arrays.asList(2100.0f, 2150.0f, 2200.0f, 2250.0f, 2300.0f, 2350.0f, 2400.0f, 2450.0f, 2500.0f, 2550.0f, 2600.0f, 2650.0f, 2700.0f, 2750.0f, 2800.0f, 2900.0f, 2950.0f, 2950.0f, 3000.0f, 3000.0f,
+3000.0f, 3000.0f, 3100.0f, 3100.0f, 3150.0f, 3150.0f, 3200.0f, 3200.0f, 3250.0f, 3250.0f, 3300.0f, 3300.0f, 3350.0f, 3350.0f, 3400.0f, 3400.0f, 3450.0f, 3500.0f, 3550.0f, 3600.0f, 3650.0f, 3700.0f,
+3750.0f, 3800.0f, 3850.0f, 3900.0f, 3900.0f, 3950.0f, 3950.0f, 4000.0f, 4100.0f, 4150.0f, 4200.0f, 4250.0f, 4300.0f, 4350.0f, 4400.0f, 4450.0f, 4500.0f, 4550.0f, 4600.0f, 4650.0f, 4700.0f, 4750.0f, 4800.0f, 4850.0f, 4900.0f, 4950.0f, 5000.0f, 5050.0f,
+5100.0f, 5150.0f, 5200.0f, 5250.0f, 5300.0f, 5350.0f, 5400.0f, 5450.0f, 5500.0f, 5500.0f, 5600.0f, 5700.0f, 5800.0f, 5900.0f, 6000.0f, 6100.0f, 6200.0f, 6300.0f, 6400.0f, 6500.0f, 6700.0f, 6900.0f, 7100.0f, 7400.0f, 7700.0f, 8000.0f, 8300.0f, 8700.0f, 9100.0f, 9500.0f));
 	}
+	
 
 	public void finalize() throws Throwable {
 
 	}
 
-	public double ecartType(double[] salaires){
-		return 0;
+	public Float ecartType(Float[] salaires){
+		return 0.0f;
 	}
 
-	public float mediane(double[] salaires){
-		return mediane;
+	public float mediane() { 
+			Collections.sort(salaires);
+			int n = salaires.size(); 
+			if (n % 2 == 1) {
+				return salaires.get(n / 2);
+			} else {
+				return (salaires.get(n / 2 - 1) + salaires.get(n / 2)) / 2;
+			}
 	}
 
-	public float quartiles(double[] salaires){
+	public float quartiles(){
+			Collections.sort(salaires);
+			int n = salaires.size();
+			float q1 = salaires.get(n / 4);
+			float q3 = salaires.get(3 * n / 4);
+			this.quartiles = q3 - q1;
 		return quartiles;
 	}
 
-	public double moyenne(double[] salaires){
+	public Float moyenne(){
 		float sum = 0;
-		for (double salary : salaires){
+		for (Float salary : salaires){
 			sum += salary;
 		} 
-		this.moyenne = sum / salaires.length;
+		this.moyenne = sum / salaires.size();
 		return this.moyenne;
 	}
 
-	public void stat(){
-
+	@Override
+	public String toString() {
+		
+		return "liste salaires: "+this.
+		salaires+"\nMedian: "+this.mediane()+"\nMoyenne :"+moyenne+"\nQuartiles :"+quartiles;
 	}
 
 }

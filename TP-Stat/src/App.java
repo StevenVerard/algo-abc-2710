@@ -1,5 +1,10 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        Stat stat = new Stat();
+        stat.moyenne();
+        stat.mediane();
+        stat.quartiles();
+        System.out.println(stat.toString());
+
     }
 }
