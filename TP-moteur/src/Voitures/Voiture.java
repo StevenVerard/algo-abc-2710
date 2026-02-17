@@ -19,19 +19,19 @@ public class Voiture {
     }
 
     public String getMarque() {
-        return marque;
+        return this.marque;
     }
 
     public String getModele() {
-        return modele;
+        return this.modele;
     }
 
     public int getPoids() {
-        return poids;
+        return this.poids;
     }
 
     public Moteur getMoteur() {
-        return moteur;
+        return this.moteur;
     }
 
     public int vitesseMax(){

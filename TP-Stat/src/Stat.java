@@ -41,6 +41,10 @@ public class Stat {
 	}
 
 	public Float ecartType(Float[] salaires){
+		for (Float salary : salaires){
+			// float ecartM =  Math.pow(salary-moyenne,2);
+		}
+
 		return 0.0f;
 	}
 
@@ -54,14 +58,32 @@ public class Stat {
 			}
 	}
 
-	public float quartiles(){
-			Collections.sort(salaires);
-			int n = salaires.size();
-			float q1 = salaires.get(n / 4);
-			float q3 = salaires.get(3 * n / 4);
-			this.quartiles = q3 - q1;
-		return quartiles;
+	public float mediane(ArrayList<Float> liste) {
+			Collections.sort(liste);
+			int n = liste.size();
+			if (n % 2 == 1) {
+				return liste.get(n / 2);
+			} else {
+				return (liste.get(n / 2 - 1) + liste.get(n / 2)) / 2;
+			}
 	}
+
+
+
+public float quartiles() {
+	Collections.sort(salaires);
+	int n = salaires.size();
+
+	ArrayList<Float> premiereMoitie = new ArrayList<>(salaires.subList(0, n / 2));
+	float q1 = mediane(premiereMoitie);
+
+	ArrayList<Float> deuxiemeMoitie = new ArrayList<>(salaires.subList(n / 2, n));
+	float q3 = mediane(deuxiemeMoitie);
+
+	
+	this.quartiles = q3 - q1;
+	return this.quartiles;
+}
 
 	public Float moyenne(){
 		float sum = 0;

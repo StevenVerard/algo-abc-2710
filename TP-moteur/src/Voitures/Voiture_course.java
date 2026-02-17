@@ -11,5 +11,20 @@ public class Voiture_course extends Voiture {
         
         super(marque, modele, poids, moteur);
     }
+
+@Override
+
+    public int vitesseMax(){
+        double vitesseMax = (int) this.moteur.getVitesseMax() - (this.poids * 0.05);
+        return (int) vitesseMax;
+    }
+
+@Override
+    public void afficherInfos(){
+        System.out.println("Voiture : " + this.getMarque() + " " + this.getModele());
+        System.out.println("Poids : " + this.getPoids() + " kg");
+        System.out.println("Vitesse max du moteur : " + this.getMoteur().getVitesseMax() + " km/h");
+    }
+
 }
 
